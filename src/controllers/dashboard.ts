@@ -1,7 +1,7 @@
-import Dashboard from '../models/dashboard.js';
+import DashboardModal from '../modals/dashboard';
+import { IDashboard } from '../types/iDashboard';
 
-// Get all users
-export const getAllUsers = async (req, res) => {
-      const users = await Dashboard.find();
-      return users;
+export const readDashboard = async () => {
+      const result: IDashboard[] = await DashboardModal.find();
+      return result;
 };
