@@ -26,7 +26,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 mongoose
-    .connect("mongodb+srv://admin:itw.admin@node-tutorial.rtnnu.mongodb.net/management-system?retryWrites=true&w=majority")
+    .connect(process.env.MONGO_URI)
     .then(() => app.listen(3000, () => console.log(`Server running on http://localhost:3000`)))
     .catch((error) => {
         throw error;
